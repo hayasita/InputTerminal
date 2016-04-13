@@ -30,28 +30,28 @@ void loop() {
   if (onw != 0) {
     switch (onw) {
       case 0x01:
-        Serial.println("ON : BUTTON_0\n");
+        Serial.println("ON : BUTTON_0");
         break;
       case 0x02:
-        Serial.println("ON : BUTTON_1\n");
+        Serial.println("ON : BUTTON_1");
         break;
       case 0x03:
-        Serial.println("ON : BUTTON_0 & BUTTON_1\n");
+        Serial.println("ON : BUTTON_0 & BUTTON_1");
         break;
       case 0x04:
-        Serial.println("ON : BUTTON_2\n");
+        Serial.println("ON : BUTTON_2");
         break;
       case 0x05:
-        Serial.println("ON : BUTTON_0 & BUTTON_2\n");
+        Serial.println("ON : BUTTON_0 & BUTTON_2");
         break;
       case 0x06:
-        Serial.println("ON : BUTTON_1 & BUTTON_2\n");
+        Serial.println("ON : BUTTON_1 & BUTTON_2");
         break;
       case 0x07:
-        Serial.println("ON : BUTTON_0 & BUTTON_1 & BUTTON_2\n");
+        Serial.println("ON : BUTTON_0 & BUTTON_1 & BUTTON_2");
         break;
       default:
-        Serial.println("Other Key.\n");
+        Serial.println("ON : Other Key");
         break;
     }
   }
