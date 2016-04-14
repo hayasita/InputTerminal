@@ -1,0 +1,24 @@
+#######################################
+# Syntax Coloring Map For Arduino GLCD
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+InputTerminal	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+scan	KEYWORD2
+read	KEYWORD2
+read_s	KEYWORD2
+read_l	KEYWORD2
+#set_keychktim_s	KEYWORD2
+#set_keychktim_l	KEYWORD2
+read_tmnum	KEYWORD2
+read_err	KEYWORD2
+
+
+
