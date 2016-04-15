@@ -1,6 +1,12 @@
 #ifndef InputTerminal_h
 #define InputTerminal_h
+
+#if defined(ARDUINO) && ARDUINO >= 100
 #include "Arduino.h"
+#else
+#include "WProgram.h"
+#endif
+
 
 #define IT_KEYCHKTIM_SHORT	100    // 100ms　キー短押し判定時間
 #define IT_KEYCHKTIM_LONG	600    // 600ms　キー長押し判定時間
