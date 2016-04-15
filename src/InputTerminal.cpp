@@ -1,5 +1,3 @@
-#include "arduino.h"
-//#include "stdafx.h"
 #include "InputTerminal.h"
 
 //#include <memory.h>
@@ -105,7 +103,6 @@ void InputTerminal::scan(void)
 
 	if (keychkw == OK) {
 		if (keydatw == keydat_lastw) {               // キー押され中
-			//      if ((timer_countw - itm_timer_oldw) >= ITM_KEYCHKTIM_LONG) {   // 長押し判定時間　長押しはON中に判定
 			if ((millis() - itm_starttiml) >= (unsigned long)keychktim_longw) {   // 長押し判定時間　長押しはON中に判定
 				longon_keydataw = keydat_lastw;                    // 長押しキー入力情報確定
 				keychkw = NG;                                      // キー入力不可とする
@@ -113,7 +110,6 @@ void InputTerminal::scan(void)
 		}
 		else if (keydatw < keydat_lastw) {           // 前回から押されているキーが減った = OFFエッジ発生
 			// 複数短ON判定は、押されているキーが減った時点で判定する。（OFFタイミングがずれただけと解釈）
-			//      if ((timer_countw - itm_timer_oldw) >= ITM_KEYCHKTIM_SHORT) {  // 短押し判定時間。　短押しはOFFエッジで判定
 			if ((millis() - itm_starttiml) >= (unsigned long)keychktim_shortw) {  // 短押し判定時間。　短押しはOFFエッジで判定
 				shorton_keydataw = keydat_lastw;                   // 短押しキー入力情報確定
 				keychkw = NG;                                      // キー入力不可とする
@@ -122,18 +118,15 @@ void InputTerminal::scan(void)
 			}
 			else {}
 
-			//      itm_timer_oldw = timer_countw; // キー入力判定時間用カウンタ初期化
 			itm_starttiml = millis();                              // キー入力時間情報初期化
 		}
 		else { // 前回から押されているキーが増えた
 			// 複数ON時は、押されたキーが増えた時点から再カウント
-			//      itm_timer_oldw = timer_countw;
 			itm_starttiml = millis();                              // キー入力時間情報初期化
 		}
 
 	}
 	else {
-		//    itm_timer_oldw = timer_countw; // キー入力判定時間用カウンタ初期化
 		itm_starttiml = millis();                              // キー入力時間情報初期化
 	}
 			
